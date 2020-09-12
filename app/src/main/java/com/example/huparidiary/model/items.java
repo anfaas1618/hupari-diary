@@ -1,6 +1,8 @@
 package com.example.huparidiary.model;
 
-public class items {
+import java.io.Serializable;
+
+public class items implements Serializable {
     String name;
     String stars;
     String ratings;
@@ -9,8 +11,9 @@ public class items {
     String phone;
     String status;
     String image;
+    String catnamewas;
 
-    public items(String name, String stars, String ratings, String ranks, String address, String phone, String status, String image) {
+    public items(String name, String stars, String ratings, String ranks, String address, String phone, String status, String image, String catnamewas) {
         this.name = name;
         this.stars = stars;
         this.ratings = ratings;
@@ -19,6 +22,15 @@ public class items {
         this.phone = phone;
         this.status = status;
         this.image = image;
+        this.catnamewas = catnamewas;
+    }
+
+    public String getCatnamewas() {
+        return catnamewas;
+    }
+
+    public void setCatnamewas(String catnamewas) {
+        this.catnamewas = catnamewas;
     }
 
     public String getName() {

@@ -1,8 +1,18 @@
 package com.example.huparidiary.network
 
+import android.app.Activity
+import android.app.AlertDialog
+import android.app.ProgressDialog
+import android.content.Context
 import android.graphics.Bitmap
 import android.util.Base64
 import android.util.Log
+import android.view.View
+import android.widget.LinearLayout
+import android.widget.ProgressBar
+import android.widget.Toast
+import com.example.huparidiary.ItemsActivity
+import com.example.huparidiary.ui.UploadWaitDialog
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
@@ -16,9 +26,11 @@ import java.net.URL
 import java.util.*
 import javax.net.ssl.HttpsURLConnection
 public class  imageupload {
+
     private val CLIENT_ID = "62865de1937fd8c"
  var urll:String="vv";
-    public fun uploadImageToImgur(image: Bitmap,uuid: String,catName:String) :String{
+    public fun uploadImageToImgur(imagea: Bitmap,uuid: String,catName:String,activity: Context) :String{
+     var   image=resizeBitmap(imagea);
         getBase64Image(image, complete = { base64Image ->
             GlobalScope.launch(Dispatchers.Default) {
                 var url = URL("https://api.imgur.com/3/image")
@@ -57,7 +69,7 @@ public class  imageupload {
                      urll=data.getString("link");
                     try {
                       var  doc = Jsoup.connect("https://mibtechnologies.in/hupariapp/uploadCategory.php?uid=${uuid}&catname=${catName}&catimage=${data.getString("link")}").get()  // <2>
-
+                         Toast.makeText(activity,"upload done",Toast.LENGTH_LONG).show();
                     }catch (e: Exception){
 
                     }
@@ -71,7 +83,7 @@ public class  imageupload {
 
 
     }
-    public fun uploadImageToImgur(image: Bitmap,catname_item:String,itemname: String,phonenumber:String,stars:String,rank:String,address:String,status:String) :String{
+    public fun uploadImageToImgur(image: Bitmap,catname_item:String,itemname: String,phonenumber:String,stars:String,rank:String,address:String,status:String,activity:Context) :String{
         getBase64Image(image, complete = { base64Image ->
             GlobalScope.launch(Dispatchers.Default) {
                 var url = URL("https://api.imgur.com/3/image")
@@ -110,6 +122,9 @@ public class  imageupload {
                     urll=data.getString("link");
                     try {
                         var  doc = Jsoup.connect("https://mibtechnologies.in/hupariapp/uploadItem.php?catname=${catname_item}&name=${itemname}&stars=${stars}&ratings=55&ranks=${rank}&address=${address}&phone=${phonenumber}&status=${status}&image=${data.getString("link")}").get()  // <2>
+                     Toast.makeText(activity,"upload done",Toast.LENGTH_LONG).show()
+
+
 
                     }catch (e: Exception){
 
@@ -124,7 +139,29 @@ public class  imageupload {
 
 
     }
+    fun resizeBitmap(source: Bitmap): Bitmap {
+        val maxResolution = 1000    //edit 'maxResolution' to fit your need
+        val width = source.width
+        val height = source.height
+        var newWidth = width
+        var newHeight = height
+        val rate: Float
 
+        if (width > height) {
+            if (maxResolution < width) {
+                rate = maxResolution / width.toFloat()
+                newHeight = (height * rate).toInt()
+                newWidth = maxResolution
+            }
+        } else {
+            if (maxResolution < height) {
+                rate = maxResolution / height.toFloat()
+                newWidth = (width * rate).toInt()
+                newHeight = maxResolution
+            }
+        }
+        return Bitmap.createScaledBitmap(source, newWidth, newHeight, true)
+    }
     private fun getBase64Image(image: Bitmap, complete: (String) -> Unit) {
         GlobalScope.launch {
             val outputStream = ByteArrayOutputStream()

@@ -11,11 +11,11 @@
 
     <TextView
         android:textStyle="bold"
-        android:fontFamily="cursive"
+        android:fontFamily="sans-serif-black"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:text="++ add category ++"
+        android:text="Add Category"
         android:layout_marginBottom="14dp"
         android:textSize="40sp" />
 
@@ -24,14 +24,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="left"
-        android:text="category name"
+        android:text="Category Name"
         android:textSize="25sp" />
 
     <EditText
        android:id="@+id/catName_dialog"
        android:layout_width="match_parent"
        android:layout_height="wrap_content"
-       android:hint="enter the category name"/>
+       android:hint="Enter the Category Name"/>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -42,7 +42,7 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:textSize="17dp"
-    android:text="chose image"/>
+    android:text="Choose Image"/>
         <androidx.coordinatorlayout.widget.CoordinatorLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
@@ -51,7 +51,7 @@
                 android:id="@+id/catImage_dialog"
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
-                android:src="@drawable/ic_android_black_24dp" />
+                android:src="@drawable/ic_baseline_image_24" />
 
 
         </androidx.coordinatorlayout.widget.CoordinatorLayout>

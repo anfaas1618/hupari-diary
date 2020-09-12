@@ -108,7 +108,7 @@ public class ItemsActivity extends AppCompatActivity {
                 ItemsJson[] itemsJsons = gson1.fromJson(response, ItemsJson[].class);
                 for (ItemsJson itemJson : itemsJsons) {
                     Log.i("TAG", "onResponse: " + itemJson.getName());
-                    items item = new items(itemJson.getName(),itemJson.getStars(),itemJson.getRatings(),itemJson.getRanks(),itemJson.getAddress(),
+                    items item = new items(itemJson.getName(),itemJson.getEmail(),itemJson.getDescription(),itemJson.getStars(),itemJson.getRatings(),itemJson.getRanks(),itemJson.getAddress(),
                                             itemJson.getPhone(),itemJson.getStatus(),itemJson.getImage());
                     myDataset.add(item);
                 }
@@ -225,7 +225,7 @@ public class ItemsActivity extends AppCompatActivity {
                 ItemsJson[] itemsJsons = gson1.fromJson(response, ItemsJson[].class);
                 for (ItemsJson itemJson : itemsJsons) {
                     Log.i("TAG", "onResponse: " + itemJson.getName());
-                    items item = new items(itemJson.getName(),itemJson.getStars(),itemJson.getRatings(),itemJson.getRanks(),itemJson.getAddress(),
+                    items item = new items(itemJson.getName(),itemJson.getEmail(),itemJson.getDescription(),itemJson.getStars(),itemJson.getRatings(),itemJson.getRanks(),itemJson.getAddress(),
                             itemJson.getPhone(),itemJson.getStatus(),itemJson.getImage());
                     myDataset.add(item);
                 }

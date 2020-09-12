@@ -17,11 +17,11 @@
         <TextView
             android:id="@+id/categoryname"
             android:textStyle="bold"
-            android:fontFamily="cursive"
+            android:fontFamily="sans-serif-black"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="++         add item        ++"
+            android:text="Add Item"
             android:layout_marginBottom="14dp"
             android:textSize="40sp" />
 
@@ -30,14 +30,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="left"
-            android:text=" name"
+            android:text=" Name"
             android:textSize="25sp" />
 
         <EditText
             android:id="@+id/item_Name_dialog"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="enter the category name"/>
+            android:hint="Enter the Category Name"/>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -48,7 +48,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="17dp"
-                android:text="chose image"/>
+                android:text="Choose Image"/>
             <androidx.coordinatorlayout.widget.CoordinatorLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
@@ -56,24 +56,46 @@
                     android:id="@+id/itemImage_dialog"
                     android:layout_width="match_parent"
                     android:layout_height="200dp"
-                    android:src="@drawable/ic_android_black_24dp" />
+                    android:src="@drawable/ic_baseline_image_24" />
             </androidx.coordinatorlayout.widget.CoordinatorLayout>
           <TextView
               android:layout_width="match_parent"
               android:layout_height="wrap_content"
-              android:text="phone number"
+              android:text="Phone Number"
               android:textSize="20dp"/>
             <EditText
                 android:id="@+id/phoneNumber"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="4dp"
-                android:hint="enter phone number"/>
+                android:hint="Enter Phone Number"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Email Id"
+                android:textSize="20dp"/>
+            <EditText
+                android:id="@+id/emailId"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="4dp"
+                android:hint="Enter Email-Id"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Description"
+                android:textSize="20dp"/>
+            <EditText
+                android:id="@+id/description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="4dp"
+                android:hint="Enter Description"/>
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textSize="20dp"
-                android:text="stars"/>
+                android:text="Rating"/>
             <RatingBar
                 android:id="@+id/ratingbar_item"
                 android:layout_width="wrap_content"
@@ -81,29 +103,29 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="rank"
+                android:text="Rank"
                 android:textSize="20dp"/>
             <EditText
                 android:id="@+id/rank"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="rank"/>
+                android:hint="Rank"/>
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="address"
+                android:text="Address"
                 android:textSize="20dp"/>
             <EditText
                 android:id="@+id/address"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="address"/>
+                android:hint="Address"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="20dp"
-android:text="status"/>
+android:text="Status"/>
      <RadioGroup
          android:id="@+id/status_item"
          android:layout_width="wrap_content"
@@ -116,12 +138,12 @@ android:text="status"/>
              android:layout_width="wrap_content"
              android:layout_height="wrap_content"
              android:layout_marginRight="10dp"
-             android:text="open"/>
+             android:text="Open"/>
          <RadioButton
              android:id="@+id/status_closed"
              android:layout_width="wrap_content"
              android:layout_height="wrap_content"
-             android:text="closed"/>
+             android:text="Closed"/>
      </RadioGroup>
 
         </LinearLayout>

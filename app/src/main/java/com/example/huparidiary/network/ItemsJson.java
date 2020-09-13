@@ -1,5 +1,5 @@
 
-package com.example.huparidiary.network;
+        package com.example.huparidiary.network;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
@@ -30,6 +30,24 @@ public class ItemsJson {
     @SerializedName("image")
     @Expose
     private String image;
+    @SerializedName("latitude")
+    @Expose
+    private String latitude;
+    @SerializedName("longitude")
+    @Expose
+    private String longitude;
+    @SerializedName("email")
+    @Expose
+    private String email;
+    @SerializedName("image2")
+    @Expose
+    private String image2;
+    @SerializedName("image3")
+    @Expose
+    private String image3;
+    @SerializedName("description")
+    @Expose
+    private String description;
 
     public String getName() {
         return name;
@@ -93,6 +111,54 @@ public class ItemsJson {
 
     public void setImage(String image) {
         this.image = image;
+    }
+
+    public String getLatitude() {
+        return latitude;
+    }
+
+    public void setLatitude(String latitude) {
+        this.latitude = latitude;
+    }
+
+    public String getLongitude() {
+        return longitude;
+    }
+
+    public void setLongitude(String longitude) {
+        this.longitude = longitude;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getImage2() {
+        return image2;
+    }
+
+    public void setImage2(String image2) {
+        this.image2 = image2;
+    }
+
+    public String getImage3() {
+        return image3;
+    }
+
+    public void setImage3(String image3) {
+        this.image3 = image3;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 
 }

@@ -47,6 +47,14 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:text="description"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/description"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:textSize="25sp"
             android:text="Contact details:"
             android:layout_marginBottom="20dp"/>
@@ -81,8 +89,18 @@
                android:background="#00E5FF"
                android:text="set location "/>
        </LinearLayout>
+<TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="email"
+    android:textSize="20dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/email_id"/>
 
     </LinearLayout>
+
 </ScrollView>
 
 

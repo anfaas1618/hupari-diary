@@ -102,7 +102,7 @@ public class itemAdapter extends  RecyclerView.Adapter<itemAdapter.MyViewHolder>
         final items item= mDataset.get(position);
         holder.itemname.setText(item.getName());
         holder.totalRatings.setText(item.getRatings());
-        holder.catname.setText(catname_text);
+        holder.catname.setText(catname_text+" ** ");
         holder.status.setText(item.getStatus());
         holder.ratingBar.setIsIndicator(true);
         holder.ratingBar.setRating(Float.valueOf(item.getStars()));

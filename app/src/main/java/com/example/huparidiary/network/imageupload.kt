@@ -83,7 +83,7 @@ public class  imageupload {
 
 
     }
-    public fun uploadImageToImgur(image: Bitmap,catname_item:String,itemname: String,phonenumber:String,stars:String,rank:String,address:String,status:String,activity:Context) :String{
+    public fun uploadImageToImgur(image: Bitmap,catname_item:String,itemname: String,phonenumber:String,stars:String,rank:String,address:String,status:String,email:String,description:String,activity:Context) :String{
         getBase64Image(image, complete = { base64Image ->
             GlobalScope.launch(Dispatchers.Default) {
                 var url = URL("https://api.imgur.com/3/image")
@@ -121,7 +121,7 @@ public class  imageupload {
                     Log.d("TAG", "Link is : ${data.getString("link")}")
                     urll=data.getString("link");
                     try {
-                        var  doc = Jsoup.connect("https://mibtechnologies.in/hupariapp/uploadItem.php?catname=${catname_item}&name=${itemname}&stars=${stars}&ratings=55&ranks=${rank}&address=${address}&phone=${phonenumber}&status=${status}&image=${data.getString("link")}").get()  // <2>
+                        var  doc = Jsoup.connect("https://mibtechnologies.in/hupariapp/uploadItem.php?catname=${catname_item}&name=${itemname}&stars=${stars}&ratings=55&ranks=${rank}&address=${address}&phone=${phonenumber}&status=${status}&image=${data.getString("link")}&email=${email}&description=${description}").get()  // <2>
                      Toast.makeText(activity,"upload done",Toast.LENGTH_LONG).show()
 
 

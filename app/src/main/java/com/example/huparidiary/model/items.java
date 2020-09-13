@@ -12,8 +12,10 @@ public class items implements Serializable {
     String status;
     String image;
     String catnamewas;
+    String mailid;
+    String description;
 
-    public items(String name, String stars, String ratings, String ranks, String address, String phone, String status, String image, String catnamewas) {
+    public items(String name, String stars, String ratings, String ranks, String address, String phone, String status, String image, String catnamewas, String mailid, String description) {
         this.name = name;
         this.stars = stars;
         this.ratings = ratings;
@@ -23,6 +25,24 @@ public class items implements Serializable {
         this.status = status;
         this.image = image;
         this.catnamewas = catnamewas;
+        this.mailid = mailid;
+        this.description = description;
+    }
+
+    public String getMailid() {
+        return mailid;
+    }
+
+    public void setMailid(String mailid) {
+        this.mailid = mailid;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public String getCatnamewas() {

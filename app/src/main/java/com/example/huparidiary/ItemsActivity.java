@@ -115,7 +115,7 @@ public static ProgressBar bar;
                     Log.i("TAG", "onResponse: " + itemJson.getName());
 
                     items item = new items(itemJson.getName(),itemJson.getStars(),itemJson.getRatings(),itemJson.getRanks(),itemJson.getAddress(),
-                                            itemJson.getPhone(),itemJson.getStatus(),itemJson.getImage(),catName);
+                                            itemJson.getPhone(),itemJson.getStatus(),itemJson.getImage(),catName,itemJson.getEmail(),itemJson.getDescription());
 
                     myDataset.add(item);
                 }
@@ -177,7 +177,10 @@ public static ProgressBar bar;
                                                                            String.valueOf( uploadDialog.ratingBar.getRating()),
                                                                             uploadDialog.rank.getText().toString().trim(),
                                                                             uploadDialog.address.getText().toString().trim(),
-                                                                            uploadDialog.radioButton_status.getText().toString().trim(),getApplicationContext());
+                                uploadDialog.radioButton_status.getText().toString().trim(),
+                                                                            uploadDialog.emailId.getText().toString().trim(),
+
+                                uploadDialog.description.getText().toString().trim(),getApplicationContext());
                         Log.i("war", "onActivityResult: "+name);
 
                         uploadDialog.dismiss();
@@ -234,7 +237,7 @@ public static ProgressBar bar;
                 for (ItemsJson itemJson : itemsJsons) {
                     Log.i("TAG", "onResponse: " + itemJson.getName());
                     items item = new items(itemJson.getName(),itemJson.getStars(),itemJson.getRatings(),itemJson.getRanks(),itemJson.getAddress(),
-                            itemJson.getPhone(),itemJson.getStatus(),itemJson.getImage(),catName);
+                            itemJson.getPhone(),itemJson.getStatus(),itemJson.getImage(),catName,itemJson.getEmail(),itemJson.getDescription());
                     myDataset.add(item);
                 }
                 mAdapter.notifyDataSetChanged();

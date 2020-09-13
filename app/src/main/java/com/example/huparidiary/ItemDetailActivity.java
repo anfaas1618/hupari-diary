@@ -44,7 +44,7 @@ import java.io.Serializable;
 import static android.Manifest.permission.CALL_PHONE;
 
 public class ItemDetailActivity extends AppCompatActivity {
-  TextView name,rank,address;
+  TextView name,rank,address,mailid,description;
   ImageView image;
   Button contactBtn,locationBtn;
   RatingBar ratingBar;
@@ -62,13 +62,16 @@ public class ItemDetailActivity extends AppCompatActivity {
         contactBtn=findViewById(R.id.contact);
         locationBtn=findViewById(R.id.btnlocation);
         ratingBar=findViewById(R.id.rating);
-
+mailid=findViewById(R.id.email_id);
+description=findViewById(R.id.description);
         // To retrieve object in second Activity
      item=  (items)  getIntent().getSerializableExtra("MyClass");
     name.setText(item.getName());
     rank.setText(item.getRanks());
     address.setText(item.getAddress());
-    Picasso.get().load(item.getImage()).into(image);
+    mailid.setText(item.getMailid());
+description.setText(item.getDescription());
+Picasso.get().load(item.getImage()).into(image);
     ratingBar.setRating(Float.parseFloat(item.getStars()));
         number=item.getPhone().trim();
       contactBtn.setOnClickListener(new View.OnClickListener() {

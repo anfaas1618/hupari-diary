@@ -122,6 +122,7 @@ public class  imageupload {
                     urll=data.getString("link");
                     try {
                         var  doc = Jsoup.connect("https://mibtechnologies.in/hupariapp/uploadItem.php?catname=${catname_item}&name=${itemname}&stars=${stars}&ratings=55&ranks=${rank}&address=${address}&phone=${phonenumber}&status=${status}&image=${data.getString("link")}&email=${email}&description=${description}").get()  // <2>
+                        Log.i("sql", "uploadImageToImgur: https://mibtechnologies.in/hupariapp/uploadItem.php?catname=${catname_item}&name=${itemname}&stars=${stars}&ratings=55&ranks=${rank}&address=${address}&phone=${phonenumber}&status=${status}&image=${data.getString("link")}&email=${email}&description=${description}")
                      Toast.makeText(activity,"upload done",Toast.LENGTH_LONG).show()
 
 
